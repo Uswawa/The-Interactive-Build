@@ -15,12 +15,15 @@ A modern, responsive website showcasing smooth scroll-triggered animations built
 ## 📁 Project Structure
 
 ```
-web-enhanced/
-├── index.html          # Main HTML5 file with semantic structure
-├── styles.css          # CSS3 with responsive design and animations
-├── script.js           # Intersection Observer for scroll animations
-├── README.md           # This file
-└── .gitignore          # Git ignore configuration
+Prefinal/
+├── html/
+│   └── index.html  # Main HTML5 file with semantic structure
+├── css/
+│   └── styles.css  # CSS3 with responsive design and animations
+├── js/
+│   └── script.js   # Intersection Observer for scroll animations
+├── README.md
+└── .gitignore
 ```
 
 ## 🎯 Technologies Used
