@@ -18,7 +18,9 @@ function initializeScrollAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 animateElement(entry.target);
-                observer.unobserve(entry.target);
+            } else {
+                // Reset animation when element leaves viewport
+                resetAnimation(entry.target);
             }
         });
     }, observerOptions);
@@ -47,6 +49,18 @@ function animateElement(element) {
 
     // Add animation class
     element.classList.add(camelCaseAnimation);
+}
+
+/**
+ * Reset animation when element leaves viewport
+ */
+function resetAnimation(element) {
+    element.style.animation = 'none';
+    element.style.opacity = '0';
+    element.classList.remove('fadeInUp', 'fadeInRight', 'fadeInLeft', 'slideInLeft', 'slideInRight', 'slideInUp', 'zoomIn', 'rotate');
+    
+    // Trigger reflow to restart animation on next trigger
+    void element.offsetWidth;
 }
 
 /**
